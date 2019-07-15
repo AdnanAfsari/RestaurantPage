@@ -1,6 +1,4 @@
-/* ==========================================================================
-SLIDER-SIX
-========================================================================== */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,21 +20,23 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+body {
+  font-family: "Lora", Georgia, serif;
+}
 
 .slider{
- background: url(img_bg_1.jpg) no-repeat center center;
+ background: url(img/img_bg_1.jpg) no-repeat center center;
  background-size: cover;
  display: table;
- height: 80vh;
+ height: 600px;
  width: 100%;
- position: absolute;
  z-index: 1;
  overflow-x: hidden;
 }
 
 .slider .slider_inner{
 background: #303030;
-height: 80vh;
+min-height: 600px;
 opacity: 0.8;
 width: 100%;
 /*z-index: 1;*/
@@ -102,7 +102,90 @@ position: absolute;
   border-top-color: #fff;
   border-left-color: #fff;
 }
-/* .button.type1.type1:hover:after, .button.type1.type1:hover:before {
+/* .slider_help.type1.type1:hover:after, .slider_help.type1.type1:hover:before {
   width: 100%;
   height: 100%;
 } */
+
+
+.main {
+  position: relative;
+  min-height: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #302939;
+  display: grid;
+  grid-template-areas: "about menu contact . . ." "content content content content content content" "content content content content content content" "content content content content content content";
+  place-items: center;
+  grid-template-columns: min-content min-content min-content;
+  grid-template-rows: min-content;
+}
+
+.main .tab {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: #302939;
+}
+
+.main .tab:hover {
+  cursor: pointer;
+  color: #15B5E2;
+  border: 2px solid #15B5E2;
+  background-color: #fff;
+
+}
+
+.activeState {
+  background-color: #302939 !important;
+  color: #fff !important;
+  border-bottom: 8px solid #fff !important;
+
+}
+
+.main .tab-about {
+  grid-area: about;
+  margin-right: 30px;
+}
+.main .tab-menu {
+  grid-area: menu;
+  margin-right: 30px;
+}
+
+.main .tab-contact {
+  grid-area: contact;
+  margin-right: 30px;
+}
+
+.main .tab-dis {
+  grid-area: content;
+}
+
+.main .tab-dis-about {
+  width: 60%;
+  justify-self: start;
+  margin-left: 3rem;
+  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+.main .tab-dis-menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main .tab-dis-menu img {
+  width: 22rem;
+  border: 4px solid #15B5E2;
+}
+
+.main .meal-1 {
+  position: relative;
+}
